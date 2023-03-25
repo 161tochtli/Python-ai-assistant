@@ -24,7 +24,8 @@ import os
 import time
 import requests
 import logging
-from playsound import playsound
+from pydub import AudioSegment
+from pydub.playback import play
 
 from jarvis.utils import console
 from jarvis.enumerations import MongoCollections
@@ -37,7 +38,8 @@ def play_activation_sound():
     """
     utils_dir = os.path.dirname(__file__)
     activation_soundfile = os.path.join(utils_dir, '..', 'files', 'activation_sound.wav')
-    playsound(activation_soundfile)
+    sound = AudioSegment.from_wav(activation_soundfile)
+    play(sound)
 
 
 def internet_connectivity_check(url='http://www.google.com/', timeout=2):
