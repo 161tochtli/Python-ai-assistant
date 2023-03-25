@@ -8,7 +8,7 @@ source jarvis_virtualenv/bin/activate
 # --------------------------------
 # Start MongoDB service
 # --------------------------------
-sudo systemctl start mongodb
+sudo systemctl start mongod
 
 # --------------------------------
 # Run unittests
@@ -19,6 +19,6 @@ exit_code=($?)
 # --------------------------------
 # Stop MongoDB service
 # --------------------------------
-sudo systemctl stop mongodb
+sudo systemctl stop mongod
 
 exit $exit_code
